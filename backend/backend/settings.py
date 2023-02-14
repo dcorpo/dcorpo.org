@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +87,14 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+
+# Custom user model and authentication
+AUTH_USER_MODEL = 'account.Account'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.AllowAllUsersModelBackend',
+    'account.backends.CustomModelBackend',
+    )
 
 
 # Password validation
