@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
     'dj_rest_auth',
     'django.contrib.sites',
     'allauth',
@@ -78,6 +80,13 @@ REST_FRAMEWORK = {
 REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_COOKIE': 'dcorpo-auth',
+    'JWT_AUTH_COOKIE': 'dcorpo-refresh',
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=55),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=10),
+    'JWT_AUTH_SECURE': False,       # set True on production
+    'JWT_AUTH_HTTPONLY': False,
+    'JWT_AUTH_RETURN_EXPIRATION': True,    # only for tests
+    'ROTATE_REFRESH_TOKENS': True,
     'OLD_PASSWORD_FIELD_ENABLED': True,
 }
 

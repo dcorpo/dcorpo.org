@@ -18,6 +18,7 @@
 
 ### Returns:
 - access_token
+- refresh_token
 - user: {
     pk,
     username,
@@ -97,6 +98,7 @@
 
 ### Returns (valid token):
 - access token
+- access_token_expiration
 ### Returns (invalid token):
 - "detail": "Token is invalid or expired"
 - "code": "token_not_valid"
