@@ -1,5 +1,8 @@
 # **API endpoints**
 
+1) [Account authentication](https://github.com/dcorpo/dcorpo.org/blob/main/docs/api_endpoints.md#account-authentication)
+2) [Account registration](https://github.com/dcorpo/dcorpo.org/blob/main/docs/api_endpoints.md#account-registration)
+
 
 ------------------------------
 
