@@ -81,11 +81,11 @@ REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_COOKIE': 'dcorpo-auth',
     'JWT_AUTH_COOKIE': 'dcorpo-refresh',
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=55),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=10),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'JWT_AUTH_SECURE': False,       # set True on production
     'JWT_AUTH_HTTPONLY': False,
-    'JWT_AUTH_RETURN_EXPIRATION': True,    # only for tests
+    'JWT_AUTH_RETURN_EXPIRATION': False,    # only for tests
     'ROTATE_REFRESH_TOKENS': True,
     'OLD_PASSWORD_FIELD_ENABLED': True,
 }
