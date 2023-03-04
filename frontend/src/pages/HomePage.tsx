@@ -1,10 +1,13 @@
 import React from 'react';
-import { MantineProvider, Text } from '@mantine/core';
+import { MantineProvider, useMantineTheme } from '@mantine/core';
+import { HeroBanner } from '../components/HeroBanner';
 
 export default function App() {
+    const mainTheme = useMantineTheme();
+
     return (
-        <MantineProvider withGlobalStyles withNormalizeCSS>
-            <Text>Welcome to DCORPO!</Text>
+        <MantineProvider withGlobalStyles withNormalizeCSS theme={mainTheme}>
+            <HeroBanner />
         </MantineProvider>
     );
 }
