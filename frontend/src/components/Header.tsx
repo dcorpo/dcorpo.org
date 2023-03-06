@@ -1,4 +1,4 @@
-import { createStyles, Header, Menu, Group, Center, Burger, Container, useMantineTheme } from '@mantine/core';
+import { createStyles, Header, Menu, Group, Center, Burger, Container, useMantineTheme, Button } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
@@ -21,6 +21,30 @@ const useStyles = createStyles((theme) => ({
 
   links: {
     [theme.fn.smallerThan('sm')]: {
+      display: 'none',
+    },
+  },
+
+  burgerMenu: {
+    display: 'flex',
+    width: '100%',
+    height: '100%',
+    backgroundColor: theme.colorScheme === 'dark' ? '#181818dd' : '#edededdd',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    position: 'absolute',
+    padding: '15px',
+    paddingTop: '30px',
+    zIndex: 100
+  },
+
+  linksMenu: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    [theme.fn.largerThan('sm')]: {
       display: 'none',
     },
   },
@@ -119,18 +143,27 @@ export function AppHeader({ links }: HeaderSearchProps) {
   });
 
   return (
-    <Header className={classes.header} withBorder height={56} mb={0} pr={50} pl={50}>
-      <Container fluid>
-        <div className={classes.inner}>
-          <Link to='/' className={classes.logoLink}>
-            {theme.colorScheme === 'light' ? <InlineLogoDark height={"42%"} /> : <InlineLogoLight height={"42%"} />}
-          </Link>
-          <Group spacing={10} className={classes.links}>
+    <>
+      <Header className={classes.header} withBorder height={56} mb={0} pr={50} pl={50}>
+        <Container fluid>
+          <div className={classes.inner}>
+            <Link to='/' className={classes.logoLink}>
+              {theme.colorScheme === 'light' ? <InlineLogoDark height={"42%"} /> : <InlineLogoLight height={"42%"} />}
+            </Link>
+            <Group spacing={10} className={classes.links}>
+              {items}
+            </Group>
+            <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+          </div>
+        </Container>
+      </Header>
+      {opened ? 
+        <div className={classes.burgerMenu}>
+          <Group spacing={10} className={classes.linksMenu}>
             {items}
           </Group>
-          <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
         </div>
-      </Container>
-    </Header>
+      : ""}
+    </>
   );
 }

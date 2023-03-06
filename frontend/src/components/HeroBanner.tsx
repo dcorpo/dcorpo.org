@@ -38,6 +38,7 @@ const useStyles = createStyles((theme) => ({
     marginTop: theme.spacing.lg,
     display: 'flex',
     justifyContent: 'center',
+    width: '100%',
 
     [theme.fn.smallerThan('xs')]: {
       flexDirection: 'column',
@@ -75,9 +76,10 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 500,
 
     color: theme.colorScheme === 'dark' ? theme.colors.gray[2] : theme.colors.gray[4],
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.light[4],
 
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.light[4],
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.light[6],
     },
   },
 
