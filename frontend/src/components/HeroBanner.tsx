@@ -82,7 +82,12 @@ const useStyles = createStyles((theme) => ({
   },
 
   logo: {
+    width: '30rem',
     marginBottom: theme.spacing.lg,
+
+    [theme.fn.smallerThan('xs')]: {
+      width: '20rem',
+    },
   }
 
 }));
@@ -97,8 +102,7 @@ export function HeroBanner() {
                 {theme.colorScheme === 'light' ? <LogoDark className={classes.logo} /> : <LogoLight className={classes.logo} />}
                 <Container p={0} size={600}>
                 <Text size="lg" color="dimmed" className={classes.description}>
-                  Temporary text: [Tired of looking for new workers? Here at DCORPO we can help you!
-                  Join us and find the person that will complete all your tasks.]
+                  The only freelance marketplace you need for outsorcing.
                 </Text>
                 </Container>
 
