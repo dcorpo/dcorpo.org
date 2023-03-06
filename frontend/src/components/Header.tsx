@@ -1,4 +1,4 @@
-import { createStyles, Header, Menu, Group, Center, Burger, Container, useMantineTheme, Button } from '@mantine/core';
+import { createStyles, Header, Menu, Group, Center, Burger, Container, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
@@ -121,7 +121,7 @@ export function AppHeader({ links }: HeaderSearchProps) {
 
     if (menuItems) {
       return (
-        <Menu key={link.label} trigger="hover" exitTransitionDuration={0}>
+        <Menu key={link.label} trigger="hover">
           <Menu.Target>
             <Link to={link.link} className={classes.link}>
               <Center>
