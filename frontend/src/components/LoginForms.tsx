@@ -54,7 +54,7 @@ import {
       },
   }));
   
-  export function SignInForm() {
+  function SignInForm() {
     const { classes } = useStyles();
     return (
       <div className={classes.wrapper}>
@@ -78,3 +78,32 @@ import {
       </div>
     );
   }
+
+  function SignUpForm() {
+    const { classes } = useStyles();
+    return (
+      <div className={classes.wrapper}>
+        <Paper className={classes.form} radius={0} p={30}>
+          <Title order={2} className={classes.title} ta="center" mt="md" mb={50}>
+            Welcome to Dcorpo!
+          </Title>
+          <TextInput label="Email address" placeholder="hello@dcorpo.org" size="md" />
+          <TextInput label="Username" placeholder="My_Username" size="md" />
+          <PasswordInput label="Password" placeholder="Set password" mt="md" size="md" />
+          <PasswordInput label="Password" placeholder="Repeat password" mt="md" size="md" />
+          <Checkbox label="I read and agree to terms" mt="xl" size="md" />
+          <Link to="/auth/registration/" className={classes.button}>
+            Register
+          </Link>
+          <Text ta="center" mt="md">
+            Already have an account?{' '}
+            <Link to="/sign_in">
+              Login
+            </Link>
+          </Text>
+        </Paper>
+      </div>
+    );
+  }
+
+export { SignInForm, SignUpForm };

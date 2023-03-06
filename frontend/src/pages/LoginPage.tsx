@@ -1,6 +1,6 @@
 import React from 'react';
-import { MantineProvider, Text, useMantineTheme } from '@mantine/core';
-import { SignInForm } from '../components/LoginForms';
+import { MantineProvider, useMantineTheme } from '@mantine/core';
+import { SignInForm, SignUpForm } from '../components/LoginForms';
 
 function SignIn() {
     const mainTheme = useMantineTheme();
@@ -18,7 +18,7 @@ function SignUp() {
 
     return (
         <MantineProvider withGlobalStyles withNormalizeCSS theme={mainTheme}>
-            <Text>Sign up!</Text>
+            <SignUpForm />
         </MantineProvider>
     );
 }
