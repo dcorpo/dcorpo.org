@@ -64,23 +64,32 @@ import { useForm } from '@mantine/form';
     textInput: {
       '&>div>input': {
         backgroundColor: 'transparent',
-        color: theme.colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.gray[4],
+        color: theme.colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.dark[8],
+      },
+      '&>div>input::placeholder': {
+        color: theme.colorScheme === 'dark' ? theme.colors.gray[2] : theme.colors.dark[3],
       }
     },
 
     passwdInput: {
       '&>div>div, &>div>div>input': {
         backgroundColor: 'transparent',
-        color: theme.colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.gray[4],
+        color: theme.colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.dark[8],
       },
       '&>div>div:nth-of-type(2)>button:hover': {
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.light[4],
+      },
+      '&>div>div>input::placeholder': {
+        color: theme.colorScheme === 'dark' ? theme.colors.gray[2] : theme.colors.dark[3],
       }
     },
 
     checkBox: {
       '&>div>div>input': {
         backgroundColor: 'transparent',
+      },
+      '&>div>div:nth-of-type(2)>label': {
+        color: theme.colorScheme === 'dark' ? theme.colors.gray[2] : theme.colors.dark[3],
       }
     }
   }));
@@ -167,7 +176,7 @@ import { useForm } from '@mantine/form';
             <TextInput className={classes.textInput} label="Username" placeholder="Username" mt="md" size="md" {...registerValidation.getInputProps('username')} />
             <PasswordInput className={classes.passwdInput} label="Password" placeholder="Password" mt="md" size="md" {...registerValidation.getInputProps('password')} />
             <PasswordInput className={classes.passwdInput} label="Password" placeholder="Repeat password" mt="md" size="md" {...registerValidation.getInputProps('passwordConfirm')} />
-            <Checkbox className={classes.checkBox} label="I read and agree to terms" mt="xl" size="md" {...registerValidation.getInputProps('termsOfService', { type: 'checkbox' })} />
+            <Checkbox className={classes.checkBox} label={["I read and agree to ", <Link to='/terms'>terms</Link>]} mt="xl" size="md" {...registerValidation.getInputProps('termsOfService', { type: 'checkbox' })} />
             {/* <Link to="/auth/registration/" className={classes.button}>
               Register
             </Link> */}
