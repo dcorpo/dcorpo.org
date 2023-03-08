@@ -28,7 +28,7 @@ const useStyles = createStyles((theme) => ({
   burgerMenu: {
     display: 'flex',
     width: '100%',
-    height: '100%',
+    height: 'calc(100vh - 56px)',
     backgroundColor: theme.colorScheme === 'dark' ? '#181818dd' : '#edededdd',
     flexDirection: 'column',
     alignItems: 'center',
