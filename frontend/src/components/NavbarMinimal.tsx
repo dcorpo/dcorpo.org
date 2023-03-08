@@ -19,17 +19,17 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.dark[7],
+    color: theme.colorScheme === 'dark' ? theme.colors.light[1] : theme.colors.dark[7],
 
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.light[5],
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.light[5],
     },
   },
 
   active: {
     '&, &:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.dark[7],
-      color: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.light[1],
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.gray[3] : theme.colors.dark[7],
+      color: theme.colorScheme === 'dark' ? theme.colors.light[1] : theme.colors.light[1],
     },
   },
 
