@@ -11,6 +11,7 @@ import HomePage from './pages/HomePage';
 import { SignIn, SignUp } from './pages/LoginPage';
 import { AppHeader } from './components/Header';
 import { JobBoard } from './pages/JobBoard';
+import { Dashboard } from './pages/Dashboard';
 
 export default function App() {
     const headerLinks = [
@@ -36,6 +37,7 @@ export default function App() {
                     <Route path='/' element={<HomePage />} />
                     <Route path='/sign_in' element={<SignIn />} />
                     <Route path='/sign_up' element={<SignUp />} />
+                    <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/job_board' element={<JobBoard />} />
                 </Routes>
             </Router>
