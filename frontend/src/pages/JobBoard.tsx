@@ -1,13 +1,24 @@
 import React from 'react';
-import { MantineProvider, useMantineTheme } from '@mantine/core';
+import { createStyles, useMantineTheme } from '@mantine/core';
 import { NavbarMinimal } from '../components/NavbarMinimal';
+import { NavbarExtended } from '../components/NavbarExtended';
+
+const useStyles = createStyles((theme) => ({
+    wrapper: {
+      height: 'calc(100vh - 56px)',
+      display: 'flex',
+    },
+}));
+
 
 export function JobBoard() {
+    const { classes } = useStyles();
     const mainTheme = useMantineTheme();
 
     return (
-        <MantineProvider withGlobalStyles withNormalizeCSS theme={mainTheme}>
+        <div className={classes.wrapper}>
             <NavbarMinimal />
-        </MantineProvider>
+            <NavbarExtended></NavbarExtended>
+        </div>
     );
 }
