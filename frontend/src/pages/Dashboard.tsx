@@ -1,6 +1,7 @@
 import { createStyles, useMantineTheme } from '@mantine/core';
 import { NavbarMinimal } from '../components/NavbarMinimal';
 import { NavbarExtended } from '../components/NavbarExtended';
+import { DashboardMenu } from '../components/NavbarMenus/DashboardMenu'
 
 const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -17,7 +18,9 @@ export function Dashboard() {
     return (
         <div className={classes.wrapper}>
             <NavbarMinimal />
-            <NavbarExtended></NavbarExtended>
+            <NavbarExtended>
+                <DashboardMenu></DashboardMenu>
+            </NavbarExtended>
         </div>
     );
 }

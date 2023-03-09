@@ -15,11 +15,13 @@ const useStyles = createStyles((theme) => ({
 }));
 
 
-export function NavbarExtended () {
+export function NavbarExtended (props: any) {
   const { classes } = useStyles();
   useMantineTheme();
 
   return (
-    <div className={classes.wrapper}></div>
+    <div className={classes.wrapper}>
+      {props.children}
+    </div>
   )
 }

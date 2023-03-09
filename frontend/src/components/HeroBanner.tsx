@@ -109,8 +109,8 @@ export function HeroBanner() {
                 </Container>
 
                 <div className={classes.controls}>
-                    <Link to='/about' className={classes.button}>
-                        About
+                    <Link to='/job_board' className={classes.button}>
+                        Job board
                     </Link>
                     <Link to='/dashboard' className={classes.button}>
                         Dashboard
