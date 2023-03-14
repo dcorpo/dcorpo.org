@@ -9,7 +9,14 @@ import { ReactComponent as InlineLogoLight } from './../resources/inlineLogoLigh
 const useStyles = createStyles((theme) => ({
   header: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.light[0],
-    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.light[6]
+    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.light[6],
+    height: "56px",
+    paddingRight: "195px",
+    paddingLeft: "195px",
+    [theme.fn.smallerThan('sm')]: {
+      paddingRight: "20px",
+      paddingLeft: "20px",
+    },
   },
 
   inner: {
@@ -144,18 +151,16 @@ export function AppHeader({ links }: HeaderSearchProps) {
 
   return (
     <>
-      <Header className={classes.header} withBorder height={56} mb={0} pr={50} pl={50}>
-        <Container fluid>
-          <div className={classes.inner}>
-            <Link to='/' className={classes.logoLink}>
-              {theme.colorScheme === 'light' ? <InlineLogoDark height={"42%"} /> : <InlineLogoLight height={"42%"} />}
-            </Link>
-            <Group spacing={10} className={classes.links}>
-              {items}
-            </Group>
-            <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
-          </div>
-        </Container>
+      <Header className={classes.header} height={56}>
+        <div className={classes.inner}>
+          <Link to='/' className={classes.logoLink}>
+            {theme.colorScheme === 'light' ? <InlineLogoDark width={"150px"} /> : <InlineLogoLight width={"150px"} />}
+          </Link>
+          <Group spacing={10} className={classes.links}>
+            {items}
+          </Group>
+          <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+        </div>
       </Header>
       {opened ? 
         <div className={classes.burgerMenu}>

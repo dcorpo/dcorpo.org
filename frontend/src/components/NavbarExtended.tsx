@@ -11,6 +11,7 @@ const useStyles = createStyles((theme) => ({
       theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[0]
     }`,
     display: 'flex',
+    justifyContent: 'center',
   },
 }));
 
